@@ -31,14 +31,12 @@ Optional arguments:
 
 ### Examples
 
-Basic usage
+Walk `./test_dir` and find all projects
 ```bash
-$ projector -d test_dir
-test_dir/dir1/project1-1/sample
-test_dir/project1
+projector -d test_dir
 ```
 
 Change directory with fzf
 ```bash
-$ cd $(projector -d ~/Documents | fzf)
+cd $(projector -d ~/Documents | fzf)
 ```
