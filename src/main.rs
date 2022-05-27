@@ -94,7 +94,7 @@ fn main() -> Result<()> {
     let ignored_files = get_ignored_files()?;
     let root_path = Path::new(&root_dir).to_path_buf();
 
-    println!("Finding projects inside {}", root_dir);
+    // println!("Finding projects inside {}", root_dir);
 
     let mut stack: Vec<PathBuf> = Vec::new();
     stack.push(root_path);
@@ -103,21 +103,21 @@ fn main() -> Result<()> {
 
     while let Some(path) = stack.pop() {
         // Check if dir is filled with only dirs
-        println!("Popped {:?} out of stack {:?}", path, stack);
+        // println!("Popped {:?} out of stack {:?}", path, stack);
 
         if is_dir_project(&path, &ignored_files)? {
-            println!("{:?} is a project", path);
+            // println!("{:?} is a project", path);
 
             projects.push(path);
         } else if !does_dir_contain_files(&path, &ignored_files)? {
-            println!("{:?} is not a project", path);
+            // println!("{:?} is not a project", path);
 
             // Get paths of dirs
             let sub_paths = list_dir(&path, &ignored_files)?;
-            println!(
-                "{:?} contains dirs: {:?}\nPushing them to stack",
-                path, sub_paths
-            );
+            // println!(
+            //     "{:?} contains dirs: {:?}\nPushing them to stack",
+            //     path, sub_paths
+            // );
 
             // Fill stack
             for sub_path in sub_paths {
@@ -125,13 +125,13 @@ fn main() -> Result<()> {
             }
         } else {
             let sub_paths = list_dir(&path, &ignored_files)?;
-            println!(
-                "{:?} is not a project and contains files: {:?}",
-                path, sub_paths
-            );
+            // println!(
+            //     "{:?} is not a project and contains files: {:?}",
+            //     path, sub_paths
+            // );
         }
 
-        println!();
+        // println!();
     }
 
     println!("Found these projects: {:?}", projects);
