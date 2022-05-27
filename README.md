@@ -1,14 +1,10 @@
 # Projector
-
 Blazingly fast tool, which walks through a specified directory and finds all projects
 
 Directory is considered a project when it contains .git directory
 
 ## Installation
-Requirements:
-- [rust](https://www.rust-lang.org/tools/install)
-
-Simply clone this repo and cargo install from source
+Simply clone this repo and cargo install from source (requires [rust](https://www.rust-lang.org/tools/install))
 ```bash
 git clone git@github.com:tomas-kucharik/projector.git
 cd projector
@@ -16,7 +12,6 @@ cargo install --path .
 ```
 
 ## Usage
-
 ```bash
 Usage:
   projector [OPTIONS]
@@ -30,7 +25,6 @@ Optional arguments:
 ```
 
 ### Examples
-
 Walk `./test_dir` and find all projects
 ```bash
 projector -d test_dir
