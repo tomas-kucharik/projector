@@ -5,8 +5,10 @@ Blazingly fast tool, which walks through a specified directory and finds all pro
 Directory is considered a project when it contains .git directory
 
 ## Installation
+Requirements:
+- [rust](https://www.rust-lang.org/tools/install)
 
-Simply clone this repo and cargo install the binary
+Simply clone this repo and cargo install from source
 ```bash
 git clone git@github.com:tomas-kucharik/projector.git
 cd projector
@@ -28,13 +30,15 @@ Optional arguments:
 ```
 
 ### Examples
+
 Basic usage
 ```bash
 $ projector -d test_dir
 test_dir/dir1/project1-1/sample
 test_dir/project1
 ```
-With fzf
+
+Change directory with fzf
 ```bash
-$ projector -d test_dir | fzf
+$ cd $(projector -d ~/Documents | fzf)
 ```
