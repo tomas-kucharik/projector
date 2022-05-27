@@ -1,8 +1,6 @@
 extern crate argparse;
 
 use std::{
-    ffi::OsStr,
-    fs,
     io::Result,
     path::{Path, PathBuf},
 };
@@ -15,9 +13,9 @@ fn main() -> Result<()> {
     let mut root_dir: String = String::new();
     {
         let mut ap = ArgumentParser::new();
-        ap.set_description("Tool which finds all subdirectories with .git/ directory inside");
+        ap.set_description("Blazingly fast tool, which walks the specified directory and finds all projects inside");
         ap.refer(&mut root_dir)
-            .add_option(&["-d", "--dir"], Store, "Path to the root directory").required();
+            .add_option(&["-d", "--dir"], Store, "Path to the directory you want to walk").required();
         ap.parse_args_or_exit();
     }
 

@@ -4,7 +4,6 @@ Blazingly fast tool, which walks through a specified directory and finds all pro
 
 Directory is considered a project when it contains .git directory
 
-
 ## Installation
 
 Simply clone this repo and cargo install the binary
