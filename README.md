@@ -36,7 +36,7 @@ Walk `./test_dir` and find all projects
 projector -d test_dir
 ```
 
-Change directory with fzf
+Change directory with [fzf](https://github.com/junegunn/fzf)
 ```bash
 cd $(projector -d ~/Documents | fzf)
 ```
